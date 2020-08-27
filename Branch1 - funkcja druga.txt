@@ -19,6 +19,7 @@ namespace AttendanceSystem.Models
         }
                
         public void AddNewEmployee(string nameFirst, string surnamefirst)
+       public voi AddNewEmployee(string nameFirst, string surnamefirst)
         {
             List<nEWPracownik> NewEmployee = new List<Pracownik>(){
             new Pracownik(){
