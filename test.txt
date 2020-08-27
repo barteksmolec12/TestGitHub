@@ -5,24 +5,22 @@ using System.Threading.Tasks;
 
 namespace AttendanceSystem.Models
 {
-    public class DBCreateQuerrys
+    public class DBCreate
     {
         readonly EwidencjaContext _connection; 
         
-        public DBCreateQuerrys()
+        public DBCreate
         {
             _connection = new EwidencjaContext(); 
         }
                
-        public void AddNewEmployee(string name, string surname, string job, string permission, int phoneNumber)
+        public void AddNewEmployee(string nameFirst, string surnamefirst)
         {
             List<Pracownik> NewEmployee = new List<Pracownik>(){
             new Pracownik(){
-                Imie = name,
-                Nazwisko = surname,
-                Stanowisko = job,
-                Uprawnienia = permission,
-                Telefon = phoneNumber
+                Imie = nameFirrst,
+                Nazwisko = surnameFirst,
+             
             }};
 
             _connection.Pracownik.AddRange(NewEmployee);
@@ -48,7 +46,6 @@ namespace AttendanceSystem.Models
                     NazwaZadania = taskTitle,
                     Idprojektu = _projectID
                 }};
-            _connection.Zadanie.AddRange(NewTask);
             _connection.SaveChanges();
         }
 
