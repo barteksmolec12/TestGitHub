@@ -46,6 +46,7 @@ namespace AttendanceSystem.Models
                     NazwaZadania = taskTitle,
                     Idprojektu = _projectID
                 }};
+            _connection.Zadanie.AddRange(NazwaZadania);
             _connection.SaveChanges();
         }
 
