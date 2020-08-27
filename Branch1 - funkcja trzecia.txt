@@ -16,7 +16,23 @@ namespace AttendanceSystem.Models
                
         public void AddNewEmployee(string nameFirst, string surnamefirst)
         {
-            List<Pracownik> NewEmployee = new List<Pracownik>(){
+            
+      public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }List<Pracownik> NewEmployee = new List<Pracownik>(){
             new Pracownik(){
                 Imie = nameFirrst,
                 Nazwisko = surnameFirst,
@@ -33,7 +49,7 @@ namespace AttendanceSystem.Models
                 new Projekt(){ 
                     NazwaProjektu = projectTitle
                 }};
-            _connection.Projekt.AddRange(NewProject);
+            _connection()
             _connection.SaveChanges();
         }
 
@@ -46,7 +62,7 @@ namespace AttendanceSystem.Models
                     NazwaZadania = taskTitle,
                     Idprojektu = _projectID
                 }};
-            _connection.Zadanie.AddRange(NazwaZadania);
+            _connectio()n.Zadanie.AddRange(NazwaZadania);
             _connection.SaveChanges();
         }
 

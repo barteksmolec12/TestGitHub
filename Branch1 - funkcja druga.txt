@@ -16,7 +16,7 @@ namespace AttendanceSystem.Models
                
         public void AddNewEmployee(string nameFirst, string surnamefirst)
         {
-            List<Pracownik> NewEmployee = new List<Pracownik>(){
+            List<nEWPracownik> NewEmployee = new List<Pracownik>(){
             new Pracownik(){
                 Imie = nameFirrst,
                 Nazwisko = surnameFirst,
@@ -37,7 +37,7 @@ namespace AttendanceSystem.Models
             _connection.SaveChanges();
         }
 
-        public void AddNewTaskToProject(string projectTitle, string taskTitle)
+        public void AddNewSTaskToProject(string projectTitle, string taskTitle)
         {
             var _projectID = _connection.Projekt.Where(s => s.NazwaProjektu == projectTitle).Select(s => s.Idprojektu).FirstOrDefault();
 
