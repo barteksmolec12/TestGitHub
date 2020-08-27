@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace AttendanceSystem.Models
+{
+    public class DBCreate
+    {
+        readonly EwidencjaContext _connection; 
+        
+        public DBCreate
+        {
+            _connection = new EwidencjaContext(); 
+        }
+               
+        public void AddNewEmployee(string nameFirst, string surnamefirst)
+        {
+            List<Pracownik> NewEmployee = new List<Pracownik>(){
+            new Pracownik(){
+                Imie = nameFirrst,
+                Nazwisko = surnameFirst,
+             
+            }};
+
+            _connection.Pracownik.AddRange(NewEmployee);
+            _connection.SaveChanges();
+        }
+
+        public void AddNewProject(string projectTitle)
+        {
+            List<Projekt> NewProject = new List<Projekt>(){
+                new Projekt(){ 
+                    NazwaProjektu = projectTitle
+                }};
+            _connection.Projekt.AddRange(NewProject);
+            _connection.SaveChanges();
+        }
+
+        public void AddNewTaskToProject(string projectTitle, string taskTitle)
+        {
+            var _projectID = _connection.Projekt.Where(s => s.NazwaProjektu == projectTitle).Select(s => s.Idprojektu).FirstOrDefault();
+
+            List<Zadanie> NewTask = new List<Zadanie>(){
+                new Zadanie(){
+                    NazwaZadania = taskTitle,
+                    Idprojektu = _projectID
+                }};
+            _connection.Zadanie.AddRange(NazwaZadania);
+            _connection.SaveChanges();
+        }
+
+    }
+}void test2()
