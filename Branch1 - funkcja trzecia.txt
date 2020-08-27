@@ -7,7 +7,7 @@ namespace AttendanceSystem.Models
 {
     public class DBCreate
     {
-        readonly EwidencjaContext _connection; 
+        
         
         public DBCreate
         {
